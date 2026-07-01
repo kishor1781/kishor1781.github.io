@@ -1,975 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kishor H R | AI/ML Engineer</title>
-  <meta name="description" content="Portfolio of Kishor H R, AI/ML Engineer focused on Deep Learning, NLP, Computer Vision, and predictive systems." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f172a;
-      --bg-soft:#111827;
-      --surface:#1e293b;
-      --surface-2:#0b1220;
-      --line:rgba(255,255,255,0.08);
-      --text:#f8fafc;
-      --muted:#cbd5e1;
-      --soft:#94a3b8;
-      --accent:#14b8a6;
-      --accent-dark:#0f766e;
-      --white:#ffffff;
-      --shadow:0 20px 40px rgba(2, 8, 23, 0.35);
-      --radius:20px;
-      --radius-sm:12px;
-      --max:1120px;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:linear-gradient(180deg, #0b1120 0%, #0f172a 45%, #111827 100%);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-      transition:0.25s ease;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    .container{
-      width:min(var(--max), calc(100% - 2rem));
-      margin:0 auto;
-    }
-
-    .section{
-      padding:88px 0;
-    }
-
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(16px);
-      background:rgba(10, 15, 28, 0.72);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav-wrap{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:800;
-      letter-spacing:0.02em;
-    }
-
-    .brand-mark{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, var(--accent), #38bdf8);
-      color:#062a28;
-      font-weight:800;
-      box-shadow:var(--shadow);
-    }
-
-    .nav-links{
-      display:flex;
-      gap:24px;
-      align-items:center;
-      color:var(--muted);
-      font-size:0.95rem;
-      font-weight:500;
-    }
-
-    .nav-links a:hover{
-      color:var(--white);
-    }
-
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding:88px 0 72px;
-    }
-
-    .hero::before,
-    .hero::after{
-      content:"";
-      position:absolute;
-      border-radius:999px;
-      filter:blur(80px);
-      opacity:0.18;
-      pointer-events:none;
-    }
-
-    .hero::before{
-      width:300px;
-      height:300px;
-      background:var(--accent);
-      top:40px;
-      right:5%;
-    }
-
-    .hero::after{
-      width:260px;
-      height:260px;
-      background:#2563eb;
-      bottom:30px;
-      left:5%;
-    }
-
-    .hero-grid{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:1.25fr 0.75fr;
-      gap:36px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:#99f6e4;
-      font-size:0.9rem;
-      font-weight:600;
-      margin-bottom:20px;
-    }
-
-    .eyebrow::before{
-      content:"";
-      width:42px;
-      height:1px;
-      background:rgba(153,246,228,0.6);
-    }
-
-    h1{
-      font-size:clamp(2.6rem, 5vw, 4.6rem);
-      line-height:1.04;
-      letter-spacing:-0.04em;
-      margin-bottom:18px;
-    }
-
-    .hero-subtitle{
-      font-size:1.1rem;
-      color:#99f6e4;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .hero-text{
-      max-width:62ch;
-      color:var(--muted);
-      font-size:1.05rem;
-      margin-bottom:30px;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:26px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:46px;
-      padding:0 18px;
-      border-radius:999px;
-      font-weight:600;
-      border:1px solid transparent;
-    }
-
-    .btn-primary{
-      background:var(--accent);
-      color:#042f2e;
-      box-shadow:0 16px 30px rgba(20, 184, 166, 0.22);
-    }
-
-    .btn-primary:hover{
-      background:#2dd4bf;
-      transform:translateY(-1px);
-    }
-
-    .btn-secondary{
-      border-color:rgba(255,255,255,0.14);
-      background:rgba(255,255,255,0.02);
-      color:var(--text);
-    }
-
-    .btn-secondary:hover{
-      border-color:rgba(255,255,255,0.26);
-      background:rgba(255,255,255,0.05);
-    }
-
-    .social-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      color:var(--soft);
-      font-size:0.95rem;
-    }
-
-    .social-row a:hover{
-      color:var(--white);
-    }
-
-    .hero-card{
-      background:linear-gradient(180deg, rgba(30,41,59,0.88), rgba(15,23,42,0.94));
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-
-    .mini-label{
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.14em;
-      color:var(--soft);
-      margin-bottom:18px;
-    }
-
-    .info-list{
-      display:grid;
-      gap:16px;
-    }
-
-    .info-item{
-      padding:16px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .info-item:last-child{
-      border-bottom:none;
-      padding-bottom:0;
-    }
-
-    .info-title{
-      font-size:0.88rem;
-      color:var(--soft);
-      margin-bottom:6px;
-    }
-
-    .info-value{
-      font-weight:600;
-      color:var(--white);
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      margin-top:22px;
-    }
-
-    .stat{
-      background:rgba(255,255,255,0.03);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px 14px;
-      text-align:center;
-    }
-
-    .stat h3{
-      font-size:1.4rem;
-      margin-bottom:4px;
-    }
-
-    .stat p{
-      font-size:0.82rem;
-      color:var(--soft);
-    }
-
-    .section-header{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:end;
-      margin-bottom:28px;
-    }
-
-    .section-header h2{
-      font-size:clamp(1.7rem, 3vw, 2.5rem);
-      letter-spacing:-0.03em;
-      margin-bottom:8px;
-    }
-
-    .section-header p{
-      color:var(--muted);
-      max-width:60ch;
-    }
-
-    .panel{
-      background:rgba(15,23,42,0.55);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:28px;
-      box-shadow:var(--shadow);
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.15fr 0.85fr;
-      gap:24px;
-    }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-    }
-
-    .chip{
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(20,184,166,0.08);
-      border:1px solid rgba(45,212,191,0.18);
-      color:#bffaf2;
-      font-size:0.92rem;
-      font-weight:500;
-    }
-
-    .edu-block{
-      display:grid;
-      gap:16px;
-    }
-
-    .edu-item{
-      padding:18px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid var(--line);
-    }
-
-    .edu-item h3{
-      font-size:1.05rem;
-      margin-bottom:6px;
-    }
-
-    .edu-item .sub{
-      color:var(--muted);
-      font-size:0.95rem;
-      margin-bottom:6px;
-    }
-
-    .edu-item .meta{
-      color:var(--soft);
-      font-size:0.9rem;
-    }
-
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:18px;
-    }
-
-    .skill-card{
-      background:rgba(255,255,255,0.03);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-    }
-
-    .skill-card h3{
-      font-size:1rem;
-      margin-bottom:12px;
-    }
-
-    .skill-card p{
-      color:var(--muted);
-      font-size:0.96rem;
-    }
-
-    .experience-card{
-      border-radius:22px;
-      padding:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(17,24,39,0.92), rgba(15,23,42,0.92));
-      box-shadow:var(--shadow);
-    }
-
-    .role-top{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      align-items:flex-start;
-      margin-bottom:18px;
-    }
-
-    .role-top h3{
-      font-size:1.3rem;
-      margin-bottom:4px;
-    }
-
-    .role-top p{
-      color:var(--muted);
-    }
-
-    .date-badge{
-      white-space:nowrap;
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:0.88rem;
-      color:#bffaf2;
-      background:rgba(20,184,166,0.08);
-      border:1px solid rgba(45,212,191,0.18);
-    }
-
-    .bullet-list{
-      list-style:none;
-      display:grid;
-      gap:14px;
-    }
-
-    .bullet-list li{
-      color:var(--muted);
-      position:relative;
-      padding-left:20px;
-    }
-
-    .bullet-list li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:11px;
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:var(--accent);
-    }
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:20px;
-    }
-
-    .project-card{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:100%;
-      border-radius:22px;
-      padding:24px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(30,41,59,0.78), rgba(15,23,42,0.96));
-      box-shadow:var(--shadow);
-    }
-
-    .project-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .project-top i{
-      font-size:1.5rem;
-      color:var(--accent);
-    }
-
-    .project-card h3{
-      font-size:1.08rem;
-      margin-bottom:10px;
-    }
-
-    .project-card p{
-      color:var(--muted);
-      font-size:0.96rem;
-      margin-bottom:18px;
-    }
-
-    .project-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:auto;
-      margin-bottom:16px;
-    }
-
-    .tag{
-      font-size:0.8rem;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid var(--line);
-      color:var(--soft);
-    }
-
-    .project-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:#99f6e4;
-      font-weight:600;
-      font-size:0.94rem;
-    }
-
-    .project-link:hover{
-      color:#ccfbf1;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .contact-card{
-      border-radius:22px;
-      padding:24px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-    }
-
-    .contact-card h3{
-      margin-bottom:12px;
-      font-size:1.05rem;
-    }
-
-    .contact-card p{
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-
-    .contact-links{
-      display:grid;
-      gap:10px;
-    }
-
-    .contact-links a{
-      color:#bffaf2;
-    }
-
-    .contact-links a:hover{
-      color:#ffffff;
-    }
-
-    footer{
-      padding:28px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--soft);
-      font-size:0.92rem;
-      text-align:center;
-    }
-
-    @media (max-width: 980px){
-      .hero-grid,
-      .about-grid,
-      .projects-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-
-      .skills-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 720px){
-      .nav-wrap{
-        flex-direction:column;
-        gap:14px;
-        align-items:flex-start;
-      }
-
-      .nav-links{
-        flex-wrap:wrap;
-        gap:14px;
-      }
-
-      .hero{
-        padding-top:64px;
-      }
-
-      .role-top,
-      .section-header{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .stats{
-        grid-template-columns:1fr;
-      }
-
-      .cta-row{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .btn{
-        width:100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kishor H R | AI/ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            darker: '#020617',
+                            slate: '#1e293b',
+                            accent: '#14b8a6',
+                            light: '#e2e8f0'
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(15, 23, 42, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-  <nav class="nav">
-    <div class="container nav-wrap">
-      <a href="#" class="brand">
-        <span class="brand-mark">K</span>
-        <span>Kishor H R</span>
-      </a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-brand-darker to-brand-dark text-white py-20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Kishor H R</h1>
+            <p class="text-lg md:text-2xl text-slate-200 mb-8">AI/ML Engineer | Deep Learning • NLP • Computer Vision</p>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">AI/ML Engineer</span>
-        <h1>Kishor H R builds practical AI systems for real-world problems.</h1>
-        <p class="hero-subtitle">Deep Learning • NLP • Computer Vision • Forecasting</p>
-        <p class="hero-text">
-          AI/ML-focused engineer with hands-on experience in NLP, computer vision, predictive modeling, and LLM-powered automation. Built deepfake detection, automated report generation, and time-series forecasting systems, with internship experience at DRDO GTRE working on technical report automation pipelines [file:1].
-        </p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://kishor1781.github.io" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-globe"></i> View Portfolio
-          </a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/kishorhr" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
-          <a class="btn btn-secondary" href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-
-        <div class="social-row">
-          <a href="mailto:raghukishor1781@gmail.com"><i class="fa-solid fa-envelope"></i> raghukishor1781@gmail.com</a>
-          <span><i class="fa-solid fa-phone"></i> +91 9019947033</span>
-          <span><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</span>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <div class="mini-label">Professional Snapshot</div>
-        <div class="info-list">
-          <div class="info-item">
-            <div class="info-title">Current Focus</div>
-            <div class="info-value">AI/ML Engineering, NLP, Computer Vision, Generative AI</div>
-          </div>
-          <div class="info-item">
-            <div class="info-title">Internship</div>
-            <div class="info-value">DRDO – Gas Turbine Research Establishment (GTRE), Bangalore [file:1]</div>
-          </div>
-          <div class="info-item">
-            <div class="info-title">Education</div>
-            <div class="info-value">B.Tech in CSE (AI/ML), Dayananda Sagar University, CGPA 8.26 [file:1]</div>
-          </div>
-          <div class="info-item">
-            <div class="info-title">Open To</div>
-            <div class="info-value">AI/ML Engineer, ML Engineer, Computer Vision, Data Science roles</div>
-          </div>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <h3>95%</h3>
-            <p>Deepfake validation accuracy [file:1]</p>
-          </div>
-          <div class="stat">
-            <h3>&lt;3%</h3>
-            <p>MAPE in gas forecasting [file:1]</p>
-          </div>
-          <div class="stat">
-            <h3>20%</h3>
-            <p>Pipeline runtime reduction [file:1]</p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </header>
-
-  <main>
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>About</h2>
-            <p>
-              A clean, professional introduction that reflects your actual background in AI/ML, your internship work, and your project depth rather than a generic student portfolio look [cite:20][file:1].
-            </p>
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="panel">
-            <p>
-              I am an AI/ML-focused Computer Science student with practical experience in Natural Language Processing, Computer Vision, and predictive modeling. My work includes building deepfake detection systems, LLM-powered report automation pipelines, and hybrid forecasting models using Python, TensorFlow, PyTorch, and modern ML tooling [file:1].
-            </p>
-            <p style="margin-top:16px; color:var(--muted);">
-              During my internship at DRDO GTRE, I contributed to an NLP pipeline for automated technical report generation using OCR and LLM-based summarization, and improved Python workflows through parallel processing techniques [file:1].
-            </p>
-            <div class="chips">
-              <span class="chip">Deep Learning</span>
-              <span class="chip">NLP</span>
-              <span class="chip">Computer Vision</span>
-              <span class="chip">Generative AI</span>
-              <span class="chip">Time Series Forecasting</span>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="edu-block">
-              <div class="edu-item">
-                <h3>Dayananda Sagar University</h3>
-                <div class="sub">B.Tech – Computer Science & Engineering (AI/ML)</div>
-                <div class="meta">Bangalore, Karnataka • CGPA: 8.26 • 2026 Passout [file:1]</div>
-              </div>
-              <div class="edu-item">
-                <h3>Alva’s PU College</h3>
-                <div class="sub">Pre-University Course (PUC)</div>
-                <div class="meta">Dakshina Kannada, Karnataka • 83.83% • 2020–2022 [file:1]</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section" style="padding-top:20px;">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Technical Skills</h2>
-            <p>
-              Your skills are grouped in a recruiter-friendly format so the portfolio immediately reflects AI/ML specialization and engineering readiness [cite:20][file:1].
-            </p>
-          </div>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Languages & Databases</h3>
-            <p>Python, Java, C++, SQL, MySQL [file:1]</p>
-          </div>
-          <div class="skill-card">
-            <h3>AI / ML Domains</h3>
-            <p>Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Time Series Forecasting [file:1]</p>
-          </div>
-          <div class="skill-card">
-            <h3>Frameworks & Libraries</h3>
-            <p>TensorFlow, PyTorch, Scikit-learn, OpenCV, NLTK, SpaCy [file:1]</p>
-          </div>
-          <div class="skill-card">
-            <h3>Tools & Technologies</h3>
-            <p>Git, GitHub, Tesseract OCR, Mixtral 8x7B, Parallel Computing (Python) [file:1]</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Experience</h2>
-            <p>
-              This section highlights real applied work, not just coursework, which is one of the strongest parts of your profile [cite:19][file:1].
-            </p>
-          </div>
-        </div>
-
-        <div class="experience-card">
-          <div class="role-top">
-            <div>
-              <h3>AI & Data Science Intern</h3>
-              <p>DRDO – Gas Turbine Research Establishment (GTRE), Bangalore, India [file:1]</p>
-            </div>
-            <div class="date-badge">Jun 2024 – Aug 2024</div>
-          </div>
-
-          <ul class="bullet-list">
-            <li>Built and optimized an NLP pipeline for automated technical report generation, applying OCR and LLM-based text processing to extract and summarize information from scanned documents [file:1].</li>
-            <li>Integrated Tesseract OCR for text extraction and Mixtral 8x7B for contextual summarization, enabling end-to-end automation of document processing workflows [file:1].</li>
-            <li>Improved Python-based data processing workflows using parallel computing techniques, reducing pipeline runtime by 20% [file:1].</li>
-            <li>Presented project outcomes to senior management and received commendation for innovation and operational impact [file:1].</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section" style="padding-top:20px;">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Featured Projects</h2>
-            <p>
-              These project cards present your strongest work with outcomes and technologies in a more professional style than a simple text list [cite:20][file:1].
-            </p>
-          </div>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <div>
-              <div class="project-top">
-                <i class="fa-regular fa-folder-open"></i>
-                <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                  <i class="fa-brands fa-github"></i>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:raghukishor1781@gmail.com" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 px-5 py-3 rounded-full transition">
+                    <i class="fas fa-envelope"></i> Email
                 </a>
-              </div>
-              <h3>NLP-Powered Automated Report Generator</h3>
-              <p>
-                Developed an NLP-based automated report generation system using Python, OCR, and LLMs to process unstructured technical documents and reduce repetitive manual reporting effort [file:1].
-              </p>
-            </div>
-            <div>
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">NLP</span>
-                <span class="tag">OCR</span>
-                <span class="tag">LLM</span>
-              </div>
-              <a class="project-link" href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer">
-                View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <div class="project-top">
-                <i class="fa-regular fa-folder-open"></i>
-                <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                  <i class="fa-brands fa-github"></i>
+                <a href="https://www.linkedin.com/in/kishorhr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 px-5 py-3 rounded-full transition">
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-              </div>
-              <h3>Deepfake Detection System</h3>
-              <p>
-                Built a CNN-based deepfake detection model using ResNet-50 transfer learning, with data augmentation and tuning that achieved 95% validation accuracy [file:1].
-              </p>
-            </div>
-            <div>
-              <div class="project-tags">
-                <span class="tag">PyTorch</span>
-                <span class="tag">OpenCV</span>
-                <span class="tag">ResNet-50</span>
-                <span class="tag">Computer Vision</span>
-              </div>
-              <a class="project-link" href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer">
-                View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <div class="project-top">
-                <i class="fa-regular fa-folder-open"></i>
-                <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                  <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 px-5 py-3 rounded-full transition">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
-              </div>
-              <h3>Natural Gas Price Prediction</h3>
-              <p>
-                Built a hybrid ARIMA + LSTM forecasting model, optimized it with GridSearchCV, and achieved less than 3% MAPE while supporting continuous model updates [file:1].
-              </p>
+                <a href="https://kishor1781.github.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-accent text-slate-950 hover:bg-teal-400 px-5 py-3 rounded-full font-semibold transition">
+                    <i class="fas fa-globe"></i> Portfolio
+                </a>
             </div>
-            <div>
-              <div class="project-tags">
-                <span class="tag">ARIMA</span>
-                <span class="tag">LSTM</span>
-                <span class="tag">Scikit-learn</span>
-                <span class="tag">Forecasting</span>
-              </div>
-              <a class="project-link" href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer">
-                View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </article>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Contact</h2>
-            <p>
-              This section makes it easier for recruiters and hiring managers to reach you quickly and view your professional profiles in one place [cite:20][file:1].
-            </p>
-          </div>
-        </div>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-14 space-y-14">
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Let’s connect</h3>
-            <p>
-              I am interested in AI/ML Engineer, Machine Learning Engineer, Computer Vision, and Data Science opportunities where I can work on practical, impactful systems [cite:19].
-            </p>
-            <div class="contact-links">
-              <a href="mailto:raghukishor1781@gmail.com"><i class="fa-solid fa-envelope"></i> raghukishor1781@gmail.com</a>
-              <a href="tel:+919019947033"><i class="fa-solid fa-phone"></i> +91 9019947033</a>
-              <span><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka, India</span>
+        <!-- Summary Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-brand-accent pb-2 mb-5">About Me</h2>
+            <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                <p class="text-lg leading-relaxed text-slate-700">
+                    AI/ML-focused Computer Science student with hands-on experience in NLP, computer vision, and predictive modeling through industry and academic projects. Built deepfake detection, automated report generation, and time-series forecasting systems using Python, TensorFlow, PyTorch, and LLMs. Completed an internship at DRDO GTRE, contributing to an NLP pipeline for automated technical report generation.
+                </p>
             </div>
-          </div>
+        </section>
 
-          <div class="contact-card">
-            <h3>Profiles</h3>
-            <p>
-              Use these links to view my portfolio, LinkedIn, and GitHub projects.
-            </p>
-            <div class="contact-links">
-              <a href="https://kishor1781.github.io" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> Portfolio Website</a>
-              <a href="https://www.linkedin.com/in/kishorhr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+        <!-- Technical Skills Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-brand-accent pb-2 mb-5">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white p-5 rounded-2xl shadow-soft border border-slate-200 hover:-translate-y-1 transition">
+                    <h3 class="font-bold text-brand-dark mb-2">Languages & Databases</h3>
+                    <p class="text-slate-700">Python, Java, C++, SQL, MySQL</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-soft border border-slate-200 hover:-translate-y-1 transition">
+                    <h3 class="font-bold text-brand-dark mb-2">AI / ML Domains</h3>
+                    <p class="text-slate-700">Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Time Series Forecasting</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-soft border border-slate-200 hover:-translate-y-1 transition">
+                    <h3 class="font-bold text-brand-dark mb-2">Frameworks & Libraries</h3>
+                    <p class="text-slate-700">TensorFlow, PyTorch, Scikit-learn, OpenCV, NLTK, SpaCy</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-soft border border-slate-200 hover:-translate-y-1 transition">
+                    <h3 class="font-bold text-brand-dark mb-2">Tools & Technologies</h3>
+                    <p class="text-slate-700">Git, GitHub, Tesseract OCR, Mixtral 8x7B, Parallel Computing</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <footer>
-    <div class="container">
-      © 2026 Kishor H R — AI/ML Portfolio
-    </div>
-  </footer>
+        <!-- Internship Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-brand-accent pb-2 mb-5">Experience</h2>
+            <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between mb-3 gap-2">
+                    <h3 class="text-xl font-bold text-slate-900">AI & Data Science Intern</h3>
+                    <span class="text-brand-accent font-semibold">Jun. 2024 – Aug. 2024</span>
+                </div>
+                <p class="text-lg font-medium text-slate-700 mb-4">DRDO – Gas Turbine Research Establishment (GTRE) | Bangalore, India</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+                    <li>Built and optimized an NLP pipeline for automated technical report generation, applying OCR and LLM-based text processing to extract and summarize information from scanned documents.</li>
+                    <li>Integrated Tesseract OCR for text extraction and Mixtral 8x7B for contextual summarization, enabling end-to-end automation of document processing workflows.</li>
+                    <li>Improved Python-based data processing workflows using parallel computing techniques, reducing pipeline runtime by 20%.</li>
+                    <li>Presented project outcomes to senior management and received commendation for innovation and operational impact.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-brand-accent pb-2 mb-5">Key Projects</h2>
+            <div class="space-y-6">
+
+                <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between mb-2 gap-2">
+                        <h3 class="text-xl font-bold text-slate-900">NLP-Powered Automated Report Generator</h3>
+                        <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:underline font-medium">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-dark mb-3">Python, NLP, OCR, LLM</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+                        <li>Developed an NLP-based automated report generation system using Python, OCR, and LLMs to process unstructured technical documents at DRDO.</li>
+                        <li>Implemented Tesseract OCR for text extraction and integrated Mixtral 8x7B for contextual summarization and structured report drafting.</li>
+                        <li>Automated repetitive manual reporting tasks, significantly improving document processing efficiency and reducing human effort.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between mb-2 gap-2">
+                        <h3 class="text-xl font-bold text-slate-900">Deepfake Detection System</h3>
+                        <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:underline font-medium">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-dark mb-3">Python, PyTorch, OpenCV, ResNet-50</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+                        <li>Developed a CNN-based deepfake detection model using ResNet-50 transfer learning trained on the Celeb-synthesis dataset.</li>
+                        <li>Applied data augmentation and hyperparameter tuning to improve model generalization and reduce overfitting.</li>
+                        <li>Achieved 95% classification accuracy on the validation set; evaluated using precision, recall, and F1-score metrics.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between mb-2 gap-2">
+                        <h3 class="text-xl font-bold text-slate-900">Natural Gas Price Prediction</h3>
+                        <a href="https://github.com/kishor1781" target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:underline font-medium">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-dark mb-3">Python, ARIMA, LSTM, Scikit-learn</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+                        <li>Built a hybrid time-series forecasting model combining ARIMA (for linear trends) and LSTM (for non-linear patterns) to predict natural gas prices.</li>
+                        <li>Applied GridSearchCV for hyperparameter optimization and evaluated model performance using MAPE, achieving a MAPE of less than 3%.</li>
+                        <li>Integrated real-time data feeds to enable continuous model updates and maintain prediction accuracy over time.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-brand-accent pb-2 mb-5">Education</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:justify-between gap-2">
+                        <h3 class="text-lg font-bold text-slate-900">Dayananda Sagar University</h3>
+                        <span class="text-slate-600 font-semibold">Class of 2026</span>
+                    </div>
+                    <p class="text-slate-700">Bachelor of Technology – Computer Science & Engineering (AI/ML)</p>
+                    <p class="text-slate-600">Bangalore, Karnataka | <span class="font-semibold text-brand-accent">CGPA: 8.26</span></p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:justify-between gap-2">
+                        <h3 class="text-lg font-bold text-slate-900">Alva’s PU College</h3>
+                        <span class="text-slate-600 font-semibold">2020 – 2022</span>
+                    </div>
+                    <p class="text-slate-700">Pre-University Course (PUC)</p>
+                    <p class="text-slate-600">Dakshina Kannada, Karnataka | <span class="font-semibold text-brand-accent">Percentage: 83.83%</span></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-darker text-slate-300 text-center py-6 mt-10">
+        <p>&copy; 2026 Kishor H R. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
