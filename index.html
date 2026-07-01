@@ -1,155 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kishor H R | AI/ML Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                        },
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#10b981', // emerald-500
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom subtle animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .skill-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-slate-900 text-slate-300 font-sans selection:bg-primary selection:text-white">
 
-    <!-- Header Section -->
-    <header class="bg-blue-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Kishor H R</h1>
-            <p class="text-xl md:text-2xl text-blue-200 mb-6">AI/ML Engineer | Deep Learning • NLP • Computer Vision</p>
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:raghukishor1781@gmail.com" class="hover:text-blue-300 transition text-lg"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://linkedin.com/in/kishorhr" target="_blank" class="hover:text-blue-300 transition text-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/kishor1781" target="_blank" class="hover:text-blue-300 transition text-lg"><i class="fab fa-github"></i> GitHub</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-mono text-xl font-bold text-white tracking-tighter">
+                <span class="text-primary">&lt;</span>KishorHR<span class="text-primary">/&gt;</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
-
-        <!-- Summary Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-900 pb-2 mb-4">About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                AI/ML-focused Computer Science student with hands-on experience in NLP, computer vision, and predictive modeling through industry and academic projects. Built deepfake detection, automated report generation, and time-series forecasting systems using Python, TensorFlow, PyTorch, and LLMs. Completed an internship at DRDO GTRE, contributing to an NLP pipeline for automated technical report generation.
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <!-- Abstract background elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        <div class="absolute bottom-20 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-in-up">
+            <h2 class="text-primary font-mono mb-4 text-lg">Hi, my name is</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">Kishor H R.</h1>
+            <h3 class="text-3xl md:text-5xl font-bold text-slate-400 mb-8">I build intelligent systems.</h3>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                I'm an AI/ML Engineer specializing in <span class="text-white font-medium">Deep Learning</span>, <span class="text-white font-medium">NLP</span>, and <span class="text-white font-medium">Computer Vision</span>. I focus on building scalable machine learning models and predictive systems.
             </p>
-        </section>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/kishor1781" target="_blank" class="text-slate-300 hover:text-white text-3xl transition-transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kishorhr" target="_blank" class="text-slate-300 hover:text-primary text-3xl transition-transform hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:raghukishor1781@gmail.com" class="text-slate-300 hover:text-secondary text-3xl transition-transform hover:-translate-y-1"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Technical Skills Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-900 pb-2 mb-4">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-blue-900 mb-2">Languages & Databases</h3>
-                    <p>Python, Java, C++, SQL, MySQL</p>
+    <!-- About & Education Section -->
+    <section id="about" class="py-20 bg-slate-850">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center mb-12 fade-in-up">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap"><span class="text-primary font-mono mr-2">01.</span> About Me</h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in-up delay-100">
+                    <p class="text-lg leading-relaxed mb-6 text-slate-300">
+                        As a Computer Science student focused on Artificial Intelligence and Machine Learning, I am deeply passionate about solving complex problems through data. 
+                    </p>
+                    <p class="text-lg leading-relaxed text-slate-300">
+                        My expertise spans developing deepfake detection architectures, building automated NLP reporting pipelines using LLMs, and engineering robust time-series forecasting models. Currently pursuing my B.Tech, I actively bridge academic theory with industry applications.
+                    </p>
                 </div>
-                <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-blue-900 mb-2">AI / ML Domains</h3>
-                    <p>Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, Time Series Forecasting</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-blue-900 mb-2">Frameworks & Libraries</h3>
-                    <p>TensorFlow, PyTorch, Scikit-learn, OpenCV, NLTK, SpaCy</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-blue-900 mb-2">Tools & Technologies</h3>
-                    <p>Git, GitHub, Tesseract OCR, Mixtral 8x7B, Parallel Computing</p>
+                
+                <div class="fade-in-up delay-200">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-700 pb-2">Education</h3>
+                    
+                    <div class="mb-6 relative pl-6 border-l-2 border-slate-700">
+                        <div class="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-1.5 ring-4 ring-slate-900"></div>
+                        <h4 class="text-lg font-bold text-white">Dayananda Sagar University</h4>
+                        <p class="text-primary text-sm font-mono mb-2">Class of 2026</p>
+                        <p class="text-slate-300 font-medium">B.Tech – Computer Science & Engineering (AI/ML)</p>
+                        <p class="text-sm text-slate-400 mt-1">Bangalore, Karnataka | CGPA: 8.26</p>
+                    </div>
+                    
+                    <div class="relative pl-6 border-l-2 border-slate-700">
+                        <div class="absolute w-3 h-3 bg-slate-600 rounded-full -left-[7px] top-1.5 ring-4 ring-slate-900"></div>
+                        <h4 class="text-lg font-bold text-white">Alva’s PU College</h4>
+                        <p class="text-primary text-sm font-mono mb-2">2020 – 2022</p>
+                        <p class="text-slate-300 font-medium">Pre-University Course (PUC)</p>
+                        <p class="text-sm text-slate-400 mt-1">Dakshina Kannada, Karnataka | 83.83%</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Internship Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-900 pb-2 mb-4">Experience</h2>
-            <div class="bg-white p-6 rounded shadow-sm border border-gray-200 mb-4">
-                <div class="flex flex-col md:flex-row justify-between mb-2">
-                    <h3 class="text-xl font-bold text-gray-900">AI & Data Science Intern</h3>
-                    <span class="text-blue-700 font-semibold">Jun. 2024 – Aug. 2024</span>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center mb-12 fade-in-up">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap"><span class="text-primary font-mono mr-2">02.</span> Technical Arsenal</h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in-up delay-100">
+                <!-- AI/ML Domains -->
+                <div class="glass-panel p-6 rounded-xl hover:border-primary/50 transition-colors">
+                    <div class="text-primary text-3xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-4">AI / ML Domains</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Deep Learning</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">NLP</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Computer Vision</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Generative AI</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Time Series</span>
+                    </div>
                 </div>
-                <p class="text-lg font-medium text-gray-700 mb-4">DRDO – Gas Turbine Research Establishment (GTRE) | Bangalore, India</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-700">
-                    <li>Built and optimized an NLP pipeline for automated technical report generation, applying OCR and LLM-based text processing to extract and summarize information from scanned documents.</li>
-                    <li>Integrated Tesseract OCR for text extraction and Mixtral 8x7B for contextual summarization, enabling end-to-end automation of document processing workflows.</li>
-                    <li>Improved Python-based data processing workflows using parallel computing techniques, reducing pipeline runtime by 20%.</li>
-                    <li>Presented project outcomes to senior management and received commendation for innovation and operational impact.</li>
+
+                <!-- Frameworks -->
+                <div class="glass-panel p-6 rounded-xl hover:border-secondary/50 transition-colors">
+                    <div class="text-secondary text-3xl mb-4"><i class="fas fa-cubes"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-4">Frameworks</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">TensorFlow</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">PyTorch</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Scikit-learn</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">OpenCV</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">NLTK</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="glass-panel p-6 rounded-xl hover:border-blue-400/50 transition-colors">
+                    <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-4">Languages & DB</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">C++</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Java</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">SQL</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">MySQL</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass-panel p-6 rounded-xl hover:border-purple-400/50 transition-colors">
+                    <div class="text-purple-400 text-3xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-4">Tools & Tech</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Git/GitHub</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Mixtral 8x7B</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Tesseract OCR</span>
+                        <span class="skill-badge text-xs px-3 py-1 rounded-full">Parallel Computing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-850">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center mb-12 fade-in-up">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap"><span class="text-primary font-mono mr-2">03.</span> Experience</h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-xl border-l-4 border-l-primary fade-in-up delay-100">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">AI & Data Science Intern</h3>
+                        <p class="text-lg text-slate-400 mt-1">DRDO – Gas Turbine Research Establishment (GTRE)</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 px-4 py-1 bg-primary/10 text-primary font-mono text-sm rounded-full border border-primary/20">
+                        Jun 2024 – Aug 2024
+                    </div>
+                </div>
+                
+                <ul class="mt-6 space-y-4 text-slate-300">
+                    <li class="flex items-start">
+                        <span class="text-primary mt-1 mr-3"><i class="fas fa-caret-right"></i></span>
+                        <span>Built and optimized an NLP pipeline for automated technical report generation, applying OCR and LLM-based text processing to extract and summarize information from scanned documents.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mt-1 mr-3"><i class="fas fa-caret-right"></i></span>
+                        <span>Integrated Tesseract OCR for text extraction and Mixtral 8x7B for contextual summarization, enabling end-to-end automation of document workflows.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mt-1 mr-3"><i class="fas fa-caret-right"></i></span>
+                        <span>Improved Python-based data processing workflows using parallel computing techniques, reducing pipeline runtime by 20%.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mt-1 mr-3"><i class="fas fa-caret-right"></i></span>
+                        <span>Presented project outcomes to senior management and received commendation for innovation and operational impact.</span>
+                    </li>
                 </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-900 pb-2 mb-4">Key Projects</h2>
-            <div class="space-y-6">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center mb-12 fade-in-up">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap"><span class="text-primary font-mono mr-2">04.</span> Featured Projects</h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                        <h3 class="text-xl font-bold text-gray-900">NLP-Powered Automated Report Generator</h3>
-                        <a href="https://github.com/kishor1781" class="text-blue-600 hover:underline"><i class="fab fa-github"></i> View on GitHub</a>
+                <div class="glass-panel rounded-xl overflow-hidden flex flex-col fade-in-up delay-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="far fa-folder-open text-4xl text-primary"></i>
+                            <a href="https://github.com/kishor1781" target="_blank" class="text-slate-400 hover:text-white text-xl"><i class="fab fa-github"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-primary transition-colors">NLP Automated Report Generator</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Developed an automated report generation system processing unstructured technical documents at DRDO. Automated repetitive manual tasks, improving efficiency and reducing human effort.
+                        </p>
                     </div>
-                    <p class="text-sm font-semibold text-blue-700 mb-3">Python, NLP, OCR, LLM</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Developed an NLP-based automated report generation system using Python, OCR, and LLMs to process unstructured technical documents at DRDO.</li>
-                        <li>Implemented Tesseract OCR for text extraction and integrated Mixtral 8x7B for contextual summarization and structured report drafting.</li>
-                        <li>Automated repetitive manual reporting tasks, significantly improving document processing efficiency and reducing human effort.</li>
-                    </ul>
+                    <div class="px-6 py-4 bg-slate-900/50 border-t border-slate-700/50">
+                        <p class="font-mono text-xs text-primary">Python • NLP • OCR • Mixtral LLM</p>
+                    </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                        <h3 class="text-xl font-bold text-gray-900">Deepfake Detection System</h3>
-                        <a href="https://github.com/kishor1781" class="text-blue-600 hover:underline"><i class="fab fa-github"></i> View on GitHub</a>
+                <div class="glass-panel rounded-xl overflow-hidden flex flex-col fade-in-up delay-200 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="far fa-folder-open text-4xl text-secondary"></i>
+                            <a href="https://github.com/kishor1781" target="_blank" class="text-slate-400 hover:text-white text-xl"><i class="fab fa-github"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-secondary transition-colors">Deepfake Detection System</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            CNN-based deepfake detection model using ResNet-50 transfer learning on the Celeb-synthesis dataset. Applied data augmentation achieving 95% classification accuracy on validation sets.
+                        </p>
                     </div>
-                    <p class="text-sm font-semibold text-blue-700 mb-3">Python, PyTorch, OpenCV, ResNet-50</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Developed a CNN-based deepfake detection model using ResNet-50 transfer learning trained on the Celeb-synthesis dataset.</li>
-                        <li>Applied data augmentation and hyperparameter tuning to improve model generalization and reduce overfitting.</li>
-                        <li>Achieved 95% classification accuracy on the validation set; evaluated using precision, recall, and F1-score metrics.</li>
-                    </ul>
+                    <div class="px-6 py-4 bg-slate-900/50 border-t border-slate-700/50">
+                        <p class="font-mono text-xs text-secondary">PyTorch • OpenCV • ResNet-50</p>
+                    </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                    <div class="flex flex-col md:flex-row justify-between mb-2">
-                        <h3 class="text-xl font-bold text-gray-900">Natural Gas Price Prediction</h3>
-                        <a href="https://github.com/kishor1781" class="text-blue-600 hover:underline"><i class="fab fa-github"></i> View on GitHub</a>
+                <div class="glass-panel rounded-xl overflow-hidden flex flex-col fade-in-up delay-300 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="far fa-folder-open text-4xl text-purple-400"></i>
+                            <a href="https://github.com/kishor1781" target="_blank" class="text-slate-400 hover:text-white text-xl"><i class="fab fa-github"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-purple-400 transition-colors">Natural Gas Price Prediction</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Hybrid time-series forecasting model combining ARIMA and LSTM. Applied GridSearchCV for optimization, integrating real-time data to achieve a MAPE of less than 3%.
+                        </p>
                     </div>
-                    <p class="text-sm font-semibold text-blue-700 mb-3">Python, ARIMA, LSTM, Scikit-learn</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Built a hybrid time-series forecasting model combining ARIMA (for linear trends) and LSTM (for non-linear patterns) to predict natural gas prices.</li>
-                        <li>Applied GridSearchCV for hyperparameter optimization and evaluated model performance using MAPE, achieving a MAPE of less than 3%.</li>
-                        <li>Integrated real-time data feeds to enable continuous model updates and maintain prediction accuracy over time.</li>
-                    </ul>
+                    <div class="px-6 py-4 bg-slate-900/50 border-t border-slate-700/50">
+                        <p class="font-mono text-xs text-purple-400">ARIMA • LSTM • Scikit-learn</p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-gray-900 border-b-2 border-blue-900 pb-2 mb-4">Education</h2>
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                    <div class="flex justify-between">
-                        <h3 class="text-lg font-bold text-gray-900">Dayananda Sagar University</h3>
-                        <span class="text-gray-600 font-semibold">Class of 2026</span>
-                    </div>
-                    <p class="text-gray-700">Bachelor of Technology – Computer Science & Engineering (AI/ML)</p>
-                    <p class="text-gray-600">Bangalore, Karnataka | <span class="font-semibold text-blue-700">CGPA: 8.26</span></p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-sm border border-gray-200">
-                    <div class="flex justify-between">
-                        <h3 class="text-lg font-bold text-gray-900">Alva’s PU College</h3>
-                        <span class="text-gray-600 font-semibold">2020 – 2022</span>
-                    </div>
-                    <p class="text-gray-700">Pre-University Course (PUC)</p>
-                    <p class="text-gray-600">Dakshina Kannada, Karnataka | <span class="font-semibold text-blue-700">Percentage: 83.83%</span></p>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
-        <p>&copy; 2026 Kishor H R. All Rights Reserved.</p>
+    <footer class="py-8 text-center bg-slate-900 border-t border-slate-800">
+        <p class="text-slate-500 font-mono text-sm">
+            Designed & Built by <span class="text-primary font-bold">Kishor H R</span> &copy; 2026
+        </p>
     </footer>
 
 </body>
